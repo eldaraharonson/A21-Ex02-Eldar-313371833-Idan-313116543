@@ -1,6 +1,6 @@
 ﻿namespace B20_Ex01_Eldar_313371833_Idan_313116543
 {
-    partial class Form1
+    partial class WelcomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // WelcomeForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(579, 450);
+            this.Name = "WelcomeForm";
+            this.Text = "Welcome";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

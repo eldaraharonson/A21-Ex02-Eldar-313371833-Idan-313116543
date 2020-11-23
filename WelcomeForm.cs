@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace B20_Ex01_Eldar_313371833_Idan_313116543
 {
-    public partial class Form1 : Form
+    public partial class WelcomeForm : Form
     {
-        public Form1()
+        public WelcomeForm()
         {
             InitializeComponent();
         }
