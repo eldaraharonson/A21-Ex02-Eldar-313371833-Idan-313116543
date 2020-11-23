@@ -20,12 +20,16 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
         }
 
         User m_LoggedInUser;
+        LoginResult m_LoginResult;
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
             string appID = "281360223294764";
-            LoginResult result = FacebookService.Login(appID, "user_photos", "user_likes", "email");
-            m_LoggedInUser = result.LoggedInUser;
+            this.m_LoginResult = FacebookService.Login(appID, "user_gender", "user_photos", "email");
+            this.m_LoggedInUser = m_LoginResult.LoggedInUser;
+            WelcomeForm welcomeForm = new WelcomeForm(this.m_LoginResult);
+            this.Hide();
+            welcomeForm.ShowDialog();
         }
     }
 }

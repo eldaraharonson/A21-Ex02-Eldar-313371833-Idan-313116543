@@ -16,11 +16,11 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
          [STAThread]
         static void Main()
         {
-            // Application.EnableVisualStyles();
-            // Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new Form1());
-            LoginForm form = new LoginForm();
-            form.ShowDialog();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LoginForm());
+           // LoginForm form = new LoginForm();
+           // form.ShowDialog();
            
         }
     }
