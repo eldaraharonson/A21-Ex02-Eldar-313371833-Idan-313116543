@@ -29,22 +29,35 @@
         private void InitializeComponent()
         {
             this.userProfilePicture = new System.Windows.Forms.PictureBox();
+            this.findStalkerButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.userProfilePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // userProfilePicture
             // 
-            this.userProfilePicture.Location = new System.Drawing.Point(446, 12);
+            this.userProfilePicture.Location = new System.Drawing.Point(333, 2);
             this.userProfilePicture.Name = "userProfilePicture";
-            this.userProfilePicture.Size = new System.Drawing.Size(121, 98);
+            this.userProfilePicture.Size = new System.Drawing.Size(100, 100);
             this.userProfilePicture.TabIndex = 0;
             this.userProfilePicture.TabStop = false;
+            // 
+            // findStalkerButton
+            // 
+            this.findStalkerButton.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.findStalkerButton.Location = new System.Drawing.Point(12, 250);
+            this.findStalkerButton.Name = "findStalkerButton";
+            this.findStalkerButton.Size = new System.Drawing.Size(158, 44);
+            this.findStalkerButton.TabIndex = 1;
+            this.findStalkerButton.Text = "Find Your Soulmate";
+            this.findStalkerButton.UseVisualStyleBackColor = true;
+            this.findStalkerButton.Click += new System.EventHandler(this.findStalkerButton_Click);
             // 
             // WelcomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 450);
+            this.ClientSize = new System.Drawing.Size(436, 306);
+            this.Controls.Add(this.findStalkerButton);
             this.Controls.Add(this.userProfilePicture);
             this.Name = "WelcomeForm";
             this.Text = "Welcome";
@@ -56,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox userProfilePicture;
+        private System.Windows.Forms.Button findStalkerButton;
     }
 }

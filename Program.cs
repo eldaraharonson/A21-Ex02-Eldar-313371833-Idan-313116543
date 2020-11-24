@@ -19,9 +19,6 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
-           // LoginForm form = new LoginForm();
-           // form.ShowDialog();
-           
         }
     }
 }

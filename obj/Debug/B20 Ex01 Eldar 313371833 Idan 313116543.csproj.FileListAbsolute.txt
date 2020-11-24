@@ -12,3 +12,4 @@ C:\Users\WINDOWS 10\Documents\IDC\Year 3\Semester A\Design Patterns\Exercises\Ex
 C:\Users\WINDOWS 10\Documents\IDC\Year 3\Semester A\Design Patterns\Exercises\Exercise 1\B20 Ex01 Eldar 313371833 Idan 313116543\obj\Debug\B20 Ex01 Eldar 313371833 Idan 313116543.pdb
 C:\Users\WINDOWS 10\Documents\IDC\Year 3\Semester A\Design Patterns\Exercises\Exercise 1\B20 Ex01 Eldar 313371833 Idan 313116543\obj\Debug\B20_Ex01_Eldar_313371833_Idan_313116543.LoginForm.resources
 C:\Users\WINDOWS 10\Documents\IDC\Year 3\Semester A\Design Patterns\Exercises\Exercise 1\B20 Ex01 Eldar 313371833 Idan 313116543\obj\Debug\B20_Ex01_Eldar_313371833_Idan_313116543.WelcomeForm.resources
+C:\Users\WINDOWS 10\Documents\IDC\Year 3\Semester A\Design Patterns\Exercises\Exercise 1\B20 Ex01 Eldar 313371833 Idan 313116543\obj\Debug\B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms.FoundSoulmateForm.resources

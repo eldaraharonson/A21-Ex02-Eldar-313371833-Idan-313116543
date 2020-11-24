@@ -1,4 +1,6 @@
-﻿using FacebookWrapper;
+﻿using B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature;
+using B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms;
+using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;
@@ -27,7 +29,15 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
         public void DisplayWelcomeMessage()
         {
             this.Text = string.Format("Logged in as {0} {1}", this.m_LoggedInUser.FirstName, this.m_LoggedInUser.LastName);
-            userProfilePicture.ImageLocation = m_LoginResult.LoggedInUser.PictureNormalURL;
+            userProfilePicture.ImageLocation = this.m_LoggedInUser.PictureNormalURL;
+        }
+
+        private void findStalkerButton_Click(object sender, EventArgs e)
+        {
+            // User soulmate = Logic.FindFriendThatGaveMostLikes(this.m_LoggedInUser);
+            FoundSoulmateForm foundSoulmateForm = new FoundSoulmateForm(m_LoggedInUser);
+            this.Hide();
+            foundSoulmateForm.ShowDialog();
         }
     }
 }
