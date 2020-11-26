@@ -35,9 +35,11 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
         private void findStalkerButton_Click(object sender, EventArgs e)
         {
             // User soulmate = Logic.FindFriendThatGaveMostLikes(this.m_LoggedInUser);
-            FoundSoulmateForm foundSoulmateForm = new FoundSoulmateForm(m_LoggedInUser);
+            //FoundSoulmateForm foundSoulmateForm = new FoundSoulmateForm(m_LoggedInUser);
             this.Hide();
-            foundSoulmateForm.ShowDialog();
+            FilterOptionsForm filterOptionsForm = new FilterOptionsForm(m_LoggedInUser);
+            filterOptionsForm.ShowDialog();
+            //foundSoulmateForm.ShowDialog();
         }
     }
 }

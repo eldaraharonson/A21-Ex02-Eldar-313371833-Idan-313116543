@@ -50,8 +50,6 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
                 this.m_LoggedInUser = m_LoginResult.LoggedInUser;
                 WelcomeForm welcomeForm = new WelcomeForm(this.m_LoginResult);
                 this.Hide();
-                //Form1 form1 = new Form1(this.m_LoggedInUser);
-                //form1.ShowDialog();
                 welcomeForm.ShowDialog();
             }
 

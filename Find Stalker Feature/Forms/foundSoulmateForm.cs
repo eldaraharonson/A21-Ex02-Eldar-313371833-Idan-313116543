@@ -16,10 +16,14 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
     {
         User m_Soulmate;
         User m_LoggedInUser;
-        public FoundSoulmateForm(User i_LoggedInUser)
+        List<string> m_PreferredGenders;
+        List<AgeRange> m_PreferredAges;
+        public FoundSoulmateForm(User i_LoggedInUser, List<string> i_PreferredGenders, List<AgeRange> i_PreferredAges)
         {
             m_LoggedInUser = i_LoggedInUser;
-            this.m_Soulmate = Logic.FindFriendThatGaveMostLikes(m_LoggedInUser);
+            m_PreferredGenders = i_PreferredGenders;
+            m_PreferredAges = i_PreferredAges;
+            m_Soulmate = FoundSoulmateFormLogic.FindFriendThatGaveMostLikes(m_LoggedInUser, m_PreferredGenders, m_PreferredAges);
             InitializeComponent();
             loadUItoForm();
         }
@@ -32,25 +36,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
                 m_Soulmate = m_LoggedInUser;
             }
             soulmateProfilePicture.ImageLocation = m_Soulmate.PictureNormalURL;
-            soulmateNameLabel.Text = string.Format("{0} has given you the most likes from all your {1} friends", m_Soulmate.Name, m_Soulmate.Gender);
+            soulmateNameLabel.Text = string.Format("{0} has given you the most likes!!", m_Soulmate.Name);
         }
-
-      /*  public void addAllPostsToListBox()
-        {
-            List<Post> posts = Logic.FindFriendThatGaveMostLikes(m_LoggedInUser);
-            foreach (Post post in posts)
-            {
-                listBox1.Items.Add(post.Message);
-            }
-        }
-
-
-        private void buttonFetchFriends_Click(object sender, EventArgs e)
-        {
-            foreach (User friend in this.m_LoggedInUser.Friends)
-            {
-                listBox1.Items.Add(friend.Name);
-            }
-        }*/
     }
 }

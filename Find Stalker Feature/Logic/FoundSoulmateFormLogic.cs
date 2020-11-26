@@ -8,17 +8,16 @@ using FacebookWrapper.ObjectModel;
 
 namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
 {
-    public class Logic
+    public class FoundSoulmateFormLogic
     {
-        
-        public static User FindFriendThatGaveMostLikes(User io_LoggedInUser)
+        public static User FindFriendThatGaveMostLikes(User io_LoggedInUser, List<string> i_PreferredGenders, List<AgeRange> i_PreferredAges)
         {
             
             int maxNumberOfLikesByOneOppositeSexFriend = 0;
             User oppositeSexFriendWithMaxNumberOfLikes = new User();
             foreach (User friend in io_LoggedInUser.Friends)
             {
-                if (isDifferentSex(io_LoggedInUser, friend) && isOfAppropriateAge(io_LoggedInUser, friend))
+                if (isOfPreferredGender(friend, i_PreferredGenders) && isOfPreferredAge(friend, i_PreferredAges))
                 {
                     int numberOfLikesByFriend = numberOfLikesFriendGaveUser(io_LoggedInUser, friend);
                     if (numberOfLikesByFriend > maxNumberOfLikesByOneOppositeSexFriend)
@@ -51,23 +50,40 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
             return numberOfLikes;
         }
 
-        private static bool isDifferentSex(User i_LoggedInUser, User i_Friend)
+        private static bool isOfPreferredGender(User i_Friend, List<string> i_PreferredGender)
         {
-            return !string.Equals(i_LoggedInUser.Gender, i_Friend.Gender);
+            bool isPreferredGender = false;
+            foreach (string gender in i_PreferredGender)
+            {
+                if (string.Equals(i_Friend.Gender, gender))
+                {
+                    isPreferredGender = true;
+                    break;
+                }
+            }
+            return isPreferredGender;
         } 
 
-        private static bool isOfAppropriateAge(User io_LoggedInUser, User i_Friend)
+        private static bool isOfPreferredAge(User i_Friend, List<AgeRange> i_PreferredAges)
         {
-            int loggedInUserBirthYear = getBirthYear(io_LoggedInUser);
-            int friendBirthYear = getBirthYear(i_Friend);
-            bool appropriateAgeDifference = Math.Abs(loggedInUserBirthYear - friendBirthYear) <= 15 && friendBirthYear >= 18;
-            return appropriateAgeDifference;
+            int friendAge = getAge(i_Friend);
+            bool preferredAge = false;
+            foreach (AgeRange ageRange in i_PreferredAges)
+            {
+                if (ageRange.isInAgeRange(friendAge))
+                {
+                    preferredAge = true;
+                    break;
+                }
+            }
+            return preferredAge;
         }
 
-        private static int getBirthYear(User user)
+        private static int getAge(User user)
         {
             int.TryParse(user.Birthday.Substring(6), out int birthYear);
-            return birthYear;
+            int age = DateTime.Now.Year - birthYear;
+            return age;
         }
     }
 }

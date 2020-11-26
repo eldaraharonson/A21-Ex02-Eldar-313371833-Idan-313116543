@@ -51,11 +51,11 @@
             // soulmateNameLabel
             // 
             this.soulmateNameLabel.AutoSize = true;
-            this.soulmateNameLabel.Location = new System.Drawing.Point(50, 188);
+            this.soulmateNameLabel.Location = new System.Drawing.Point(113, 188);
             this.soulmateNameLabel.Name = "soulmateNameLabel";
-            this.soulmateNameLabel.Size = new System.Drawing.Size(326, 13);
+            this.soulmateNameLabel.Size = new System.Drawing.Size(185, 13);
             this.soulmateNameLabel.TabIndex = 2;
-            this.soulmateNameLabel.Text = "\"{Name} has given you the most likes from all your {gender} friends\"";
+            this.soulmateNameLabel.Text = "{Name} has given you the most likes!!";
             // 
             // label1
             // 
