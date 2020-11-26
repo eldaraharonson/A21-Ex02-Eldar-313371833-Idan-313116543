@@ -15,13 +15,11 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
 {
     public partial class LoginForm : Form
     {
+        public LoginResult m_LoginResult;
         public LoginForm()
         {
             InitializeComponent();
         }
-
-        User m_LoggedInUser;
-        LoginResult m_LoginResult;
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
@@ -47,7 +45,6 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
                         "user_photos",
                         "user_posts",
                         "user_hometown");
-                this.m_LoggedInUser = m_LoginResult.LoggedInUser;
                 WelcomeForm welcomeForm = new WelcomeForm(this.m_LoginResult);
                 this.Hide();
                 welcomeForm.ShowDialog();

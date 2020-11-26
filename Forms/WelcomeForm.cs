@@ -16,30 +16,40 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
 {
     public partial class WelcomeForm : Form
     {
-        LoginResult m_LoginResult;
-        User m_LoggedInUser;
+        private LoginResult m_LoginResult;
+        private User m_LoggedInUser;
         public WelcomeForm(LoginResult i_LoginResult)
         {
             InitializeComponent();
-            this.m_LoginResult = i_LoginResult;
-            this.m_LoggedInUser = i_LoginResult.LoggedInUser;
+            m_LoginResult = i_LoginResult;
+            m_LoggedInUser = i_LoginResult.LoggedInUser;
             DisplayWelcomeMessage();
+        }
+
+        public enum FormName
+        {
+            groupPopularity = 0,
+            findStalker = 1
         }
 
         public void DisplayWelcomeMessage()
         {
-            this.Text = string.Format("Logged in as {0} {1}", this.m_LoggedInUser.FirstName, this.m_LoggedInUser.LastName);
-            userProfilePicture.ImageLocation = this.m_LoggedInUser.PictureNormalURL;
+            this.Text = string.Format("Logged in as {0} {1}", m_LoggedInUser.FirstName, m_LoggedInUser.LastName);
+            userProfilePicture.ImageLocation = m_LoggedInUser.PictureNormalURL;
         }
 
         private void findStalkerButton_Click(object sender, EventArgs e)
         {
-            // User soulmate = Logic.FindFriendThatGaveMostLikes(this.m_LoggedInUser);
-            //FoundSoulmateForm foundSoulmateForm = new FoundSoulmateForm(m_LoggedInUser);
             this.Hide();
-            FilterOptionsForm filterOptionsForm = new FilterOptionsForm(m_LoggedInUser);
+            FilterOptionsForm filterOptionsForm = new FilterOptionsForm(m_LoggedInUser, null, FormName.findStalker);
             filterOptionsForm.ShowDialog();
-            //foundSoulmateForm.ShowDialog();
+        }
+
+        private void groupPopularityButtom_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ChooseGroupForm filterOptionsForm = new ChooseGroupForm(m_LoggedInUser, FormName.groupPopularity);
+            filterOptionsForm.ShowDialog();
         }
     }
 }

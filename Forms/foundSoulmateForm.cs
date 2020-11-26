@@ -14,16 +14,17 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
 {
     public partial class FoundSoulmateForm : Form
     {
-        User m_Soulmate;
-        User m_LoggedInUser;
-        List<string> m_PreferredGenders;
-        List<AgeRange> m_PreferredAges;
+        private User m_Soulmate;
+        private User m_LoggedInUser;
+        private List<string> m_PreferredGenders;
+        private List<AgeRange> m_PreferredAges;
+
         public FoundSoulmateForm(User i_LoggedInUser, List<string> i_PreferredGenders, List<AgeRange> i_PreferredAges)
         {
             m_LoggedInUser = i_LoggedInUser;
             m_PreferredGenders = i_PreferredGenders;
             m_PreferredAges = i_PreferredAges;
-            m_Soulmate = FoundSoulmateFormLogic.FindFriendThatGaveMostLikes(m_LoggedInUser, m_PreferredGenders, m_PreferredAges);
+            m_Soulmate = FoundSoulmateAndGroupPopularityLogic.FindFriendThatGaveMostLikes(m_LoggedInUser, m_PreferredGenders, m_PreferredAges);
             InitializeComponent();
             loadUItoForm();
         }
@@ -35,6 +36,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
             {
                 m_Soulmate = m_LoggedInUser;
             }
+
             soulmateProfilePicture.ImageLocation = m_Soulmate.PictureNormalURL;
             soulmateNameLabel.Text = string.Format("{0} has given you the most likes!!", m_Soulmate.Name);
         }

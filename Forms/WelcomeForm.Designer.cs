@@ -30,14 +30,15 @@
         {
             this.userProfilePicture = new System.Windows.Forms.PictureBox();
             this.findStalkerButton = new System.Windows.Forms.Button();
+            this.groupPopularityButtom = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.userProfilePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // userProfilePicture
             // 
-            this.userProfilePicture.Location = new System.Drawing.Point(333, 2);
+            this.userProfilePicture.Location = new System.Drawing.Point(290, 2);
             this.userProfilePicture.Name = "userProfilePicture";
-            this.userProfilePicture.Size = new System.Drawing.Size(100, 100);
+            this.userProfilePicture.Size = new System.Drawing.Size(143, 130);
             this.userProfilePicture.TabIndex = 0;
             this.userProfilePicture.TabStop = false;
             // 
@@ -52,11 +53,22 @@
             this.findStalkerButton.UseVisualStyleBackColor = true;
             this.findStalkerButton.Click += new System.EventHandler(this.findStalkerButton_Click);
             // 
+            // groupPopularityButtom
+            // 
+            this.groupPopularityButtom.Location = new System.Drawing.Point(272, 250);
+            this.groupPopularityButtom.Name = "groupPopularityButtom";
+            this.groupPopularityButtom.Size = new System.Drawing.Size(152, 44);
+            this.groupPopularityButtom.TabIndex = 2;
+            this.groupPopularityButtom.Text = "Group Popularity";
+            this.groupPopularityButtom.UseVisualStyleBackColor = true;
+            this.groupPopularityButtom.Click += new System.EventHandler(this.groupPopularityButtom_Click);
+            // 
             // WelcomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 306);
+            this.Controls.Add(this.groupPopularityButtom);
             this.Controls.Add(this.findStalkerButton);
             this.Controls.Add(this.userProfilePicture);
             this.Name = "WelcomeForm";
@@ -70,5 +82,6 @@
 
         private System.Windows.Forms.PictureBox userProfilePicture;
         private System.Windows.Forms.Button findStalkerButton;
+        private System.Windows.Forms.Button groupPopularityButtom;
     }
 }

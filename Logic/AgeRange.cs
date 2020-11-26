@@ -8,8 +8,23 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
 {
     public class AgeRange
     {
-        int m_LowestAge;
-        int m_HighestAge;
+        public int m_LowestAge;
+        public int m_HighestAge;
+        public int LowestAge
+        {
+            get
+            {
+                return m_LowestAge;
+            }
+        }
+
+        public int HighestAge
+        {
+            get
+            {
+                return m_HighestAge;
+            }
+        }
 
         public AgeRange(int i_LowestAge, int i_HighestAge)
         {

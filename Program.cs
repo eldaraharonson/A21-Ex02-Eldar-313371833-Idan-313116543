@@ -10,9 +10,6 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
          [STAThread]
         static void Main()
         {

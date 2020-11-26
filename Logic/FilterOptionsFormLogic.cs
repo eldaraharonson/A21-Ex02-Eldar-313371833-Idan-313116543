@@ -9,7 +9,6 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
 {
     public class FilterOptionsFormLogic
     {
-
         public static List<AgeRange> GetAgeRanges(CheckedListBox io_AgesCheckedListBox)
         {
             List<AgeRange> ageRanges = new List<AgeRange>();
@@ -30,16 +29,15 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
             return genders;
         }
 
-        public static bool CheckBoxesValidation(CheckedListBox checkedListBox)
+        public static bool CheckBoxesValidation(CheckedListBox i_CheckedListBox)
         {
-            return checkedListBox.CheckedItems.Count > 0;
+            return i_CheckedListBox.CheckedItems.Count > 0;
         }
 
-
-        public static List<string> GetCheckBoxListItems(CheckedListBox  checkedListBox)
+        public static List<string> GetCheckBoxListItems(CheckedListBox  i_CheckedListBox)
         {
             List<string> checkedItems = new List<string>();
-            foreach (string item in checkedListBox.CheckedItems)
+            foreach (string item in i_CheckedListBox.CheckedItems)
             {
                 checkedItems.Add(item);
             }
