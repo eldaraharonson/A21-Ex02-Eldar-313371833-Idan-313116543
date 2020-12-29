@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginFormFacade.cs" />
+    <Compile Include="Facade.cs" />
     <Compile Include="Forms\ChooseGroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +60,7 @@
       <DependentUpon>ChooseGroupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\AgeRange.cs" />
+    <Compile Include="Logic\FacebookSystem.cs" />
     <Compile Include="Logic\FilterOptionsFormLogic.cs" />
     <Compile Include="Forms\FilterOptionsForm.cs">
       <SubType>Form</SubType>

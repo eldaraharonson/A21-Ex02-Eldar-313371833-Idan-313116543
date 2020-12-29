@@ -9,6 +9,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
     public partial class LoginForm : Form
     {
         public LoginResult m_LoginResult;
+        public Facade m_Facade = new Facade();
         public LoginForm()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
             if (m_LoginResult == null)
             {
                 string appID = "281360223294764";
-                this.m_LoginResult = LoginFormFacade.LoginToFacebook(appID,
+                this.m_LoginResult = m_Facade.LoginToFacebook(appID,
                     "public_profile",
                         "email",
                         "publish_to_groups",
