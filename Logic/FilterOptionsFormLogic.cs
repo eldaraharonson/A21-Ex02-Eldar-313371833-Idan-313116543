@@ -43,5 +43,88 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
             }
             return checkedItems;
         }
+
+        public static GroupBuilder BuilderMatcher(AgeRange i_AgePreferences, List<string> i_Gender ,int i_likes)
+        {
+            BuilderMatcher builderMatcher;
+            if (i_AgePreferences.HighestAge == 25)
+            {
+                if ((i_Gender.Capacity == 1) && (i_Gender[0] == "Male"))
+                {
+
+                    if (i_likes > 100)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else if ((i_Gender.Capacity == 1) && (i_Gender[0] == "Female"))
+                {
+                    if (i_likes > 100)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            else if(i_AgePreferences.LowestAge == 50)
+            {
+                if ((i_Gender.Capacity == 1) && (i_Gender[0] == "Male"))
+                {
+
+                    if (i_likes > 100)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else if ((i_Gender.Capacity == 1) && (i_Gender[0] == "Female"))
+                {
+                    if (i_likes > 100)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+
+                }
+
+            }
+            else
+            {
+
+            }
+        }
+
+        public enum GroupBuilder
+        {
+            YoungBoysPopularGroupBuilder = 0,
+            YoungBoysNotPopularGroupBuilder = 1,
+            OldMenPopularGroupBuilder = 2,
+            OldMenNotPopularGroupBuilder = 3,
+            YoungGirlsGroupPopularBuilder = 4,
+            YoungGirlsGroupNotPopularBuilder = 5,
+            OldWomenPopularGroupBuilder = 6,
+            OldWomenNotPopularGroupBuilder = 7,
+            OtherGroup = 8
+        }
     }
 }
