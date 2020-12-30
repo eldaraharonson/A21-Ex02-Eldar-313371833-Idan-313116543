@@ -8,9 +8,9 @@ using FacebookWrapper.ObjectModel;
 
 namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
 {
-    public class FoundSoulmateAndGroupPopularityLogic
+    public class FoundSoulmateAndGroupPopularitySystem
     {
-        public static User FindFriendThatGaveMostLikes(User io_LoggedInUser, List<string> io_PreferredGenders, List<AgeRange> io_PreferredAges)
+        public User FindFriendThatGaveMostLikes(User io_LoggedInUser, List<string> io_PreferredGenders, List<AgeRange> io_PreferredAges)
         {
             int maxNumberOfLikesByOneOppositeSexFriend = 0;
             User oppositeSexFriendWithMaxNumberOfLikes = new User();

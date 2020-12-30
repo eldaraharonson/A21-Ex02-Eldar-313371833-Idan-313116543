@@ -39,7 +39,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
                         {
                             return;
                         }
-
+                        assignSelectedFilters();
                         FoundSoulmateForm foundSoulmateForm = new FoundSoulmateForm(m_LoggedInUser, m_PreferredGenders, m_PreferredAgeRanges);
                         this.Hide();
                         foundSoulmateForm.ShowDialog();
@@ -53,6 +53,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
                             return;
                         }
 
+                        assignSelectedFilters();
                         GroupPopularityForm groupPopularityForm = new GroupPopularityForm(m_Group, m_PreferredGenders, m_PreferredAgeRanges);
                         this.Hide();
                         groupPopularityForm.ShowDialog();
@@ -66,16 +67,24 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
 
         private bool hasChosenParameters()
         {
+            List<CheckedListBox> checkedListBoxes = new List<CheckedListBox>();
+            checkedListBoxes.Add(preferredAgesCheckList);
+            checkedListBoxes.Add(preferredGenderCheckList);
             bool isValid = true;
-            if (!FilterOptionsSystem.CheckBoxesValidation(preferredGenderCheckList) || !FilterOptionsSystem.CheckBoxesValidation(preferredAgesCheckList))
+            if (!m_Facade.CheckBoxesValidation(checkedListBoxes))
             {
                 MessageBox.Show("You must check at least one item from each checkbox list");
                 isValid = false;
             }
 
-            m_PreferredAgeRanges = FilterOptionsSystem.GetAgeRanges(preferredAgesCheckList);
-            m_PreferredGenders = FilterOptionsSystem.GetGenders(preferredGenderCheckList);
+           
             return isValid;
+        }
+
+        private void assignSelectedFilters()
+        {
+            m_PreferredAgeRanges = m_Facade.GetSelectedAgeRanges(preferredAgesCheckList);
+            m_PreferredGenders = m_Facade.GetSelectedGenders(preferredGenderCheckList);
         }
     }
 }

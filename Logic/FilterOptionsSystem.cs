@@ -29,9 +29,20 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
             return genders;
         }
 
-        public bool CheckBoxesValidation(CheckedListBox i_CheckedListBox)
+        //checks that for all filters at least one filter has been checked
+        public bool CheckBoxesValidation(List<CheckedListBox> i_CheckedListBoxes)
         {
-            return i_CheckedListBox.CheckedItems.Count > 0;
+            bool allFiltersChecked = true;
+            foreach (CheckedListBox checkedListBox in i_CheckedListBoxes)
+            {
+                if (checkedListBox.CheckedItems.Count == 0)
+                {
+                    allFiltersChecked = false;
+                    break;
+                }
+            }
+
+            return allFiltersChecked;
         }
 
         public List<string> GetCheckBoxListItems(CheckedListBox  i_CheckedListBox)

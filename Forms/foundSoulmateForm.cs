@@ -14,6 +14,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
 {
     public partial class FoundSoulmateForm : Form
     {
+        public Facade m_Facade = new Facade();
         private User m_Soulmate;
         private User m_LoggedInUser;
         private List<string> m_PreferredGenders;
@@ -24,7 +25,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
             m_LoggedInUser = i_LoggedInUser;
             m_PreferredGenders = i_PreferredGenders;
             m_PreferredAges = i_PreferredAges;
-            m_Soulmate = FoundSoulmateAndGroupPopularityLogic.FindFriendThatGaveMostLikes(m_LoggedInUser, m_PreferredGenders, m_PreferredAges);
+            m_Soulmate = m_Facade.GetFriendThatGaveMostLikes(m_LoggedInUser, m_PreferredGenders, m_PreferredAges);
             InitializeComponent();
             loadUItoForm();
         }

@@ -74,7 +74,7 @@
     <Compile Include="Forms\FoundSoulmateForm.Designer.cs">
       <DependentUpon>FoundSoulmateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logic\FoundSoulmateAndGroupPopularityLogic.cs" />
+    <Compile Include="Logic\FoundSoulmateAndGroupPopularitySystem.cs" />
     <Compile Include="Forms\GroupPopularityForm.cs">
       <SubType>Form</SubType>
     </Compile>

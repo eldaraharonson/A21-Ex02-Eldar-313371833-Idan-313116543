@@ -24,7 +24,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
             m_Group = i_Group;
             m_PreferredGenders = i_PreferredGenders;
             m_PreferredAges = i_PreferredAges;
-            m_MemberCount = FoundSoulmateAndGroupPopularityLogic.numberOfMembersInGroup(m_Group, m_PreferredGenders, m_PreferredAges);
+            m_MemberCount = FoundSoulmateAndGroupPopularitySystem.numberOfMembersInGroup(m_Group, m_PreferredGenders, m_PreferredAges);
             InitializeComponent();
             loadUIToForm();
         }
