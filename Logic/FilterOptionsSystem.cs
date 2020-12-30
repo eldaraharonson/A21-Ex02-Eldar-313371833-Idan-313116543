@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
 {
-    public class FilterOptionsFormLogic
+    public class FilterOptionsSystem
     {
-        public static List<AgeRange> GetAgeRanges(CheckedListBox io_AgesCheckedListBox)
+        public List<AgeRange> GetAgeRanges(CheckedListBox io_AgesCheckedListBox)
         {
             List<AgeRange> ageRanges = new List<AgeRange>();
             List<string> stringOfAgeRanges = GetCheckBoxListItems(io_AgesCheckedListBox);
@@ -23,18 +23,29 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
             return ageRanges;
         }
 
-        public static List<string> GetGenders(CheckedListBox io_GendersCheckedListBox)
+        public List<string> GetGenders(CheckedListBox io_GendersCheckedListBox)
         {
             List<string> genders = GetCheckBoxListItems(io_GendersCheckedListBox);
             return genders;
         }
 
-        public static bool CheckBoxesValidation(CheckedListBox i_CheckedListBox)
+        //checks that for all filters at least one filter has been checked
+        public bool CheckBoxesValidation(List<CheckedListBox> i_CheckedListBoxes)
         {
-            return i_CheckedListBox.CheckedItems.Count > 0;
+            bool allFiltersChecked = true;
+            foreach (CheckedListBox checkedListBox in i_CheckedListBoxes)
+            {
+                if (checkedListBox.CheckedItems.Count == 0)
+                {
+                    allFiltersChecked = false;
+                    break;
+                }
+            }
+
+            return allFiltersChecked;
         }
 
-        public static List<string> GetCheckBoxListItems(CheckedListBox  i_CheckedListBox)
+        public List<string> GetCheckBoxListItems(CheckedListBox  i_CheckedListBox)
         {
             List<string> checkedItems = new List<string>();
             foreach (string item in i_CheckedListBox.CheckedItems)
