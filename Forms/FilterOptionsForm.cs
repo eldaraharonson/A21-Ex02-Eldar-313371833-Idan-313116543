@@ -19,6 +19,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
         public List<AgeRange> m_PreferredAgeRanges;
         public List<string> m_PreferredGenders;
         public Group m_Group;
+        public Facade m_Facade = new Facade();
 
         public FilterOptionsForm(User i_LoggedInUser, Group i_Group, WelcomeForm.FormName i_FormName)
         {
@@ -66,14 +67,14 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature.Forms
         private bool hasChosenParameters()
         {
             bool isValid = true;
-            if (!FilterOptionsFormLogic.CheckBoxesValidation(preferredGenderCheckList) || !FilterOptionsFormLogic.CheckBoxesValidation(preferredAgesCheckList))
+            if (!FilterOptionsSystem.CheckBoxesValidation(preferredGenderCheckList) || !FilterOptionsSystem.CheckBoxesValidation(preferredAgesCheckList))
             {
                 MessageBox.Show("You must check at least one item from each checkbox list");
                 isValid = false;
             }
 
-            m_PreferredAgeRanges = FilterOptionsFormLogic.GetAgeRanges(preferredAgesCheckList);
-            m_PreferredGenders = FilterOptionsFormLogic.GetGenders(preferredGenderCheckList);
+            m_PreferredAgeRanges = FilterOptionsSystem.GetAgeRanges(preferredAgesCheckList);
+            m_PreferredGenders = FilterOptionsSystem.GetGenders(preferredGenderCheckList);
             return isValid;
         }
     }

@@ -61,7 +61,7 @@
     </Compile>
     <Compile Include="Logic\AgeRange.cs" />
     <Compile Include="Logic\FacebookSystem.cs" />
-    <Compile Include="Logic\FilterOptionsFormLogic.cs" />
+    <Compile Include="Logic\FilterOptionsSystem.cs" />
     <Compile Include="Forms\FilterOptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
