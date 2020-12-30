@@ -87,9 +87,10 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543.Find_Stalker_Feature
             return age;
         }
 
-        public static int numberOfMembersInGroup(Group i_Group, List<string> io_PreferredGenders, List<AgeRange> io_PreferredAges)
+        public int numberOfMembersInGroup(Group i_Group, List<string> io_PreferredGenders, List<AgeRange> io_PreferredAges)
         {
             int memberCount = 0;
+            //TODO: display something defaultive since facebook doesn't allow this
             foreach (User member in i_Group.Members)
             {
                 if (isOfPreferredGender(member, io_PreferredGenders) && isOfPreferredAge(member, io_PreferredAges))

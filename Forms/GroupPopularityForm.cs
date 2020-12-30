@@ -14,6 +14,7 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
 {
     public partial class GroupPopularityForm : Form
     {
+        public Facade m_Facade = new Facade();
         private Group m_Group;
         private List<string> m_PreferredGenders;
         private List<AgeRange> m_PreferredAges;
@@ -24,7 +25,8 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
             m_Group = i_Group;
             m_PreferredGenders = i_PreferredGenders;
             m_PreferredAges = i_PreferredAges;
-            m_MemberCount = FoundSoulmateAndGroupPopularitySystem.numberOfMembersInGroup(m_Group, m_PreferredGenders, m_PreferredAges);
+            m_MemberCount = m_Facade.GetNumberOfMembersInGroup(m_Group, m_PreferredGenders, m_PreferredAges);
+           // m_MemberCount = FoundSoulmateAndGroupPopularitySystem.numberOfMembersInGroup(m_Group, m_PreferredGenders, m_PreferredAges);
             InitializeComponent();
             loadUIToForm();
         }

@@ -46,5 +46,10 @@ namespace B20_Ex01_Eldar_313371833_Idan_313116543
         {
             return foundSoulmateAndGroupPopularitySystem.FindFriendThatGaveMostLikes(io_LoggedInUser, io_PreferredGenders, io_PreferredAges);
         }
+
+        public int GetNumberOfMembersInGroup(Group io_Group, List<string> io_PreferredGenders, List<AgeRange> io_PreferredAges)
+        {
+            return foundSoulmateAndGroupPopularitySystem.numberOfMembersInGroup(io_Group, io_PreferredGenders, io_PreferredAges);
+        }
     }
 }
